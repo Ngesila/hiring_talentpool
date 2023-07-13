@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -26,12 +27,13 @@ def get_applicants_data():
             continue
         else:
             break
-
-    data_str = input("Please enter the following numbers: \n years of experience, development languages, foreign languages: \n ")
-
-
-    applicants_data = data_str.split(",")
-    validate_data(applicants_data)
+    while True:
+        data_str = input("Please enter the following numbers: \n years of experience, development languages, foreign languages: \n ")
+        applicants_data = data_str.split(",")
+        if validate_data(applicants_data):
+            print("Data is valid")
+            break    
+    return name, applicants_data
 
 def validate_data(values):
     """
@@ -39,45 +41,36 @@ def validate_data(values):
     Raises ValueError if strings cannot be converted into int,
     or if there aren't exactly values.
     """
-    
     try:
-        [int(value) for value in values]
         if len(values) != 3:
             raise ValueError("Exactly 3 values required, you provided {len(values)}")
     except ValueError as e:
         print(f"Invalid data:{e}, please try again.\n")
-
-get_applicants_data()     
-
-    
-
-   
-   
-    
-    
-    
-
-   
-                
+        return False
+    return True
 
 
+def update_worksheet(value1, value2, value3, value4):
+    """
+    Update hiring worksheet.
+    """
+    value2 = int(value2)
+    value3 = int(value3)
+    value4 = int(value4)
+    print("Updating worksheet...\n")
+    applicants_worksheet = SHEET.worksheet("applicants")
+    applicants_worksheet.append_row([value1, value2, value3, value4])
+    print("Applicants worksheet updated successfully.\n")
 
+def main():
+    """
+    Run all program functions
+    """
+    data = get_applicants_data() 
+    name = data[0]
+    numbers = data[1]
+    update_worksheet(name, numbers[0], numbers[1], numbers[2])
 
+print("welcome to Hiring Talent Pool Data Automation")
+main()
 
-
-
-
-
-
-    
-    
-    
-   
-    
-    
-    
-
-    
-
-    
-   
