@@ -62,6 +62,44 @@ def update_worksheet(value1, value2, value3, value4):
     applicants_worksheet.append_row([value1, value2, value3, value4])
     print("Applicants worksheet updated successfully.\n")
 
+
+def update_worksheet_position(value):
+    """
+    Update position worksheet.
+    """
+    print("Updating position worksheet...\n")
+    position_worksheet = SHEET.worksheet("position")
+    position_worksheet.append_row([value[0][0][0], value[0][0][1], value[0][0][2], value[0][0][3], value[0][1], value[0][2]])
+    print("Position worksheet updated successfully.\n")
+    
+
+
+def applicants_position():
+    """
+    Assesment on years of experience.
+    <= 2 to get Junior Manager position, vacation: 23 days.
+    >= 5 to get Manager position, vacation: 25 days.
+    >= 8 to get Senior Project Manager position, vacation: 30 days.
+    """
+    print("applicant_position...\n")
+    applicant = SHEET.worksheet("applicants").get_all_values()
+    applicant = applicant[-1]
+    position_row = []
+
+    position = "Junior Manager"
+    vacation = "23 days"
+    if int(applicant[1]) >= 5:
+       position = "Manager"
+       vacation = "25 days"
+    if int(applicant[1]) >= 8:
+       position = "Senior Project Manager"
+       vacation = "30 days"
+       
+    data = applicant, position, vacation
+    position_row.append(data) 
+    return position_row     
+           
+         
 def main():
     """
     Run all program functions
@@ -70,7 +108,10 @@ def main():
     name = data[0]
     numbers = data[1]
     update_worksheet(name, numbers[0], numbers[1], numbers[2])
+    data_position = applicants_position()
+    update_worksheet_position(data_position)
 
 print("welcome to Hiring Talent Pool Data Automation")
 main()
+
 
