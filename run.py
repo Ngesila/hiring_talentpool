@@ -21,21 +21,20 @@ def get_applicants_data():
         try:
             name = input("Please enter your name: \n")
             if len(name) < 2:
-                raise ValueError("Invalid input. Please enter a name with more than 2 characters.")
+                raise ValueError("Invalid input: more than 2 characters.")
         except ValueError as e:
-            print(f"Invalid input: {e}, Please enter a name with more than 2 characters.")
+            print(f"Invalid input: {e},enter more than 2 characters.")
             continue
         else:
             break
-
-       
     while True:
-        data_str = input("Please enter the following numbers: \n years of experience, development languages, foreign languages: \n ")
+        data_str = input("enter:\n experience years, dev,foreign languages:\n")
         applicants_data = data_str.split(",")
         if validate_data(applicants_data):
             print("Data is valid")
-            break    
+            break
     return name, applicants_data
+
 
 def validate_data(values):
     """
@@ -45,7 +44,7 @@ def validate_data(values):
     """
     try:
         if len(values) != 3:
-            raise ValueError("Exactly 3 values required, you provided {len(values)}")
+            raise ValueError("Exactly 3 values, you provided{len(values)}")
     except ValueError as e:
         print(f"Invalid data:{e}, please try again.\n")
         return False
@@ -74,7 +73,6 @@ def update_worksheet_position(value):
     position_worksheet = SHEET.worksheet("position")
     position_worksheet.append_row([value[0][0][0], value[0][0][1], value[0][0][2], value[0][0][3], value[0][1], value[0][2]])
     print("Position worksheet updated successfully.\n")
-    
 
 
 def applicants_position():
@@ -92,29 +90,27 @@ def applicants_position():
     position = "Junior Manager"
     vacation = "23 days"
     if int(applicant[1]) >= 5:
-       position = "Manager"
-       vacation = "25 days"
+        position = "Manager"
+        vacation = "25 days"
     if int(applicant[1]) >= 8:
-       position = "Senior Project Manager"
-       vacation = "30 days"
-       
+        position = "Senior Project Manager"
+        vacation = "30 days"
     data = applicant, position, vacation
-    position_row.append(data) 
-    return position_row     
-           
-         
+    position_row.append(data)
+    return position_row
+
+
 def main():
     """
     Run all program functions
     """
-    data = get_applicants_data() 
+    data = get_applicants_data()
     name = data[0]
     numbers = data[1]
     update_worksheet(name, numbers[0], numbers[1], numbers[2])
     data_position = applicants_position()
     update_worksheet_position(data_position)
 
+
 print("welcome to Hiring Talent Pool Data Automation")
 main()
-
-
