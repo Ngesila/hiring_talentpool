@@ -1,6 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -27,6 +27,8 @@ def get_applicants_data():
             continue
         else:
             break
+
+       
     while True:
         data_str = input("Please enter the following numbers: \n years of experience, development languages, foreign languages: \n ")
         applicants_data = data_str.split(",")
@@ -66,6 +68,7 @@ def update_worksheet(value1, value2, value3, value4):
 def update_worksheet_position(value):
     """
     Update position worksheet.
+    Review vacation days.
     """
     print("Updating position worksheet...\n")
     position_worksheet = SHEET.worksheet("position")
