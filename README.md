@@ -12,6 +12,8 @@
 
 
 
+![Structure_1_Hiring-Talentpool](https://github.com/Ngesila/hiring_talentpool/assets/126699411/b4b8aab9-8a47-4d4c-af99-981a8f35d5b8)
+
 
 # Testing
 
