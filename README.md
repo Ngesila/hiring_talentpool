@@ -1,5 +1,5 @@
 # Project 3_2023: 
-## Module: python and Heroku App
+## Module: Python and Heroku App
 ### Hiring-talentpool 
 
 ## User Experience (UX)
@@ -28,15 +28,15 @@
 ### input of more than 3 values(numbers) in place of years of experience, number of programmer language learnt and number of foreign languages, error occurs until fixed.
 
 
-## To validate python
-### using Code instute: CI python Linter: https://pep8ci.herokuapp.com/#
+## To validate Python
+### using Code instute: CI Python Linter: https://pep8ci.herokuapp.com/#
 
 
 # Technologies Used
 
 ## Languages Used
 
-### python
+### Python
 
 # Libraries & Programs Used
 
@@ -67,8 +67,8 @@
 
 ## Github
 ## Heroku App
-### heroku/python
-### heroku/nodejs
+### Heroku/Python
+### Heroku/nodejs
 
 
 
