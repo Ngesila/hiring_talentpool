@@ -1,32 +1,67 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Project3: Hiring-talentpool 
 
-Welcome,
+## User Experience (UX)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+### The google spread is used to evaluate software developers with any experience to assign them position and use this data to employ them.
+### Software developers with 2 years and less get Junior Manager position and 23 days vacation in a year
+### Software developers with more  than 5 years get Manager position and 25 days vacation in a year.
+### Software developers with 8 years and above, get  Senior Project Manager position and 30days vaction in a year.
 
-## Reminders
+# Project structure
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+# Testing
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+##  testing
 
-Connect your GitHub repository and deploy as normal.
+### input of a name with less than 2 letter error occurs  until fixed.
+### input of more than 3 values(numbers) in place of years of experience, number of programmer language learnt and number of foreign languages, error occurs until fixed.
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## To validate python
+### using Code instute: CI python Linter: https://pep8ci.herokuapp.com/#
 
----
 
-Happy coding!
+# Technologies Used
+
+## Languages Used
+
+### python
+
+# Libraries & Programs Used
+
+### I created own spreadsheet: https://docs.google.com/spreadsheets/d/1Xe3cW6Xxa8mMov73J4BEZJgp5D05Wj5sPM-ChrscBJo/edit#gid=1263416281
+### I Activated  API credentials
+### link offered in Code Instute learning python lesson: https://console.cloud.google.com/welcome?project=snacks2023
+### link offered in Code Instute learning python lesson:
+###      SCOPE = [
+###    "https://www.googleapis.com/auth/spreadsheets",
+###    "https://www.googleapis.com/auth/drive.file",
+###    "https://www.googleapis.com/auth/drive"
+###    ]
+
+
+# Credits
+
+### Code Instistute: where I am learning how to code taking a course in full-stack-software-development-diploma
+### Tutors and Mentoring from Code institute.
+
+
+
+# Acknowledgments
+
+# Tutors and Mentor from Code instistute.
+## Essential lessons and Love Sandwiches Walkthrough Project offered at Code Institute
+
+# Deployment
+
+## Github
+## Heroku App
+### heroku/python
+### heroku/nodejs
+
+
+
